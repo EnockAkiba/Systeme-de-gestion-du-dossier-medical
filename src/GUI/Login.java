@@ -1,8 +1,5 @@
 package GUI;
 
-
-import GUI.Facturation;
-import GUI.Laboratoire;
 import GUI.Reception;
 import GUI.Accueil;
 import java.sql.Connection;
@@ -29,6 +26,7 @@ public class Login extends javax.swing.JFrame  {
     Connection con;
     PreparedStatement pst;
     ResultSet rs;
+   
     Statement st;
    public String type;
     /**
@@ -75,7 +73,9 @@ public class Login extends javax.swing.JFrame  {
         jPanel1.setBackground(new java.awt.Color(153, 178, 202));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 152, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login_icon.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 140, 140));
 
         jPanel2.setBackground(new java.awt.Color(153, 178, 202));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(254, 246, 160)));
@@ -171,7 +171,9 @@ public class Login extends javax.swing.JFrame  {
         jLabel5.setText("Systeme de Gestion");
         jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, 50));
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1486506224-h-sign-hospital-hospital-sign-hospital-medical-road-sign_81459.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 100, 100));
 
         jLabel7.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
         jLabel7.setText("Time");
@@ -181,7 +183,9 @@ public class Login extends javax.swing.JFrame  {
         jLabel8.setForeground(new java.awt.Color(224, 35, 35));
         jLabel8.setText("CBCA/NDOSHO");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, 50));
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 19, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1486506224-h-sign-hospital-hospital-sign-hospital-medical-road-sign_81459.png"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 110, 100));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 370));
 
@@ -205,8 +209,11 @@ public class Login extends javax.swing.JFrame  {
                rs=pst.executeQuery();
                if (rs.next()){
                   System.out.print("salut "+type);
+                   String t="";
+                  t=type;
                     Accueil f = new Accueil();
                     f.setVisible(true);
+                    this.setVisible(false);
                }
                else 
                    JOptionPane.showMessageDialog(this, "Nom d'utilisateur ou mot de passe incorrect ");

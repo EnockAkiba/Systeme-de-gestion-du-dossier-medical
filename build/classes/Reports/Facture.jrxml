@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ebfbdd1-c129-4c49-95ba-4ec7aad8c957">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     chambre.`Nom` AS chambre_Nom,
+     chambre.`Prix` AS chambre_Prix,
+     consommation.`IdMedicament` AS consommation_IdMedicament,
+     consommation.`Quantite` AS consommation_Quantite,
+     consommation.`Observation` AS consommation_Observation,
+     interner.`Id` AS interner_Id,
+     interner.`IdM` AS interner_IdM,
+     interner.`IdChambre` AS interner_IdChambre,
+     interner.`DEntree` AS interner_DEntree,
+     interner.`DSortie` AS interner_DSortie,
+     malade.`Noms` AS malade_Noms,
+     malade.`Sexe` AS malade_Sexe,
+     malade.`Telephone` AS malade_Telephone,
+     medoc.`Nom_Medoc` AS medoc_Nom_Medoc,
+     medoc.`Prix_Medoc` AS medoc_Prix_Medoc,
+     consommation.`Prix` AS consommation_Prix
+FROM
+     `chambre` chambre INNER JOIN `interner` interner ON chambre.`Id` = interner.`IdChambre`
+     INNER JOIN `malade` malade ON interner.`IdM` = malade.`Id_Malade`
+     INNER JOIN `consommation` consommation ON malade.`Id_Malade` = consommation.`IdMalade`
+     INNER JOIN `medoc` medoc ON consommation.`IdMedicament` = medoc.`Id_Medoc`]]>
+	</queryString>
+	<field name="chambre_Nom" class="java.lang.String"/>
+	<field name="chambre_Prix" class="java.lang.Double"/>
+	<field name="consommation_IdMedicament" class="java.lang.Integer"/>
+	<field name="consommation_Quantite" class="java.lang.Integer"/>
+	<field name="consommation_Observation" class="java.lang.String"/>
+	<field name="interner_Id" class="java.lang.Integer"/>
+	<field name="interner_IdM" class="java.lang.Integer"/>
+	<field name="interner_IdChambre" class="java.lang.Integer"/>
+	<field name="interner_DEntree" class="java.sql.Timestamp"/>
+	<field name="interner_DSortie" class="java.sql.Date"/>
+	<field name="malade_Noms" class="java.lang.String"/>
+	<field name="malade_Sexe" class="java.lang.String"/>
+	<field name="malade_Telephone" class="java.lang.String"/>
+	<field name="medoc_Nom_Medoc" class="java.lang.String"/>
+	<field name="medoc_Prix_Medoc" class="java.lang.String"/>
+	<field name="consommation_Prix" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

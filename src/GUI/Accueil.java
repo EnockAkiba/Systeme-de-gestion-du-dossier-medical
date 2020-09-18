@@ -37,13 +37,15 @@ public class Accueil extends javax.swing.JFrame {
     ResultSet rs;
     Statement st;
     private Reception f;
-
+    Login e = new Login();
+    public String em;
     /**
      * Creates new form Accueil
      */
     public Accueil() {
         initComponents();
         datecourante();
+//    em=e.t;
     }
 
     public void datecourante() {
@@ -86,17 +88,13 @@ public class Accueil extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenu9 = new javax.swing.JMenu();
-        jMenu11 = new javax.swing.JMenu();
-        jMenu10 = new javax.swing.JMenu();
-        jMenu12 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -120,9 +118,9 @@ public class Accueil extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 153));
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jLabel1.setText("Acceuil");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/hospital_icon-icons.com_76234 (1).png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 116, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(175, 202, 229));
 
@@ -140,95 +138,98 @@ public class Accueil extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 628, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 640, Short.MAX_VALUE)
                 .addComponent(LabHeure, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel15)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel15)
-                        .addComponent(jLabel6))
-                    .addComponent(LabHeure, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel6)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(LabHeure, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, -1));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 153, 153));
         jLabel5.setForeground(new java.awt.Color(0, 153, 153));
         jLabel5.setToolTipText("");
         jLabel5.setFocusTraversalPolicyProvider(true);
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 109, 1170, 540));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1030, 410));
 
         jMenuBar1.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
 
-        jMenu1.setText("File");
+        jMenu1.setText("Menu");
         jMenu1.setFocusable(false);
         jMenu1.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
 
-        jMenu3.setText("Réception ");
-        jMenu3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem9.setText("Réception ");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu3ActionPerformed(evt);
+                jMenuItem9ActionPerformed(evt);
             }
         });
+        jMenu1.add(jMenuItem9);
 
-        jMenu4.setText("Nouvea Malade");
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setText("Consultation");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
+                jMenuItem10ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenu4);
+        jMenu1.add(jMenuItem10);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Liste de Malades");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem11.setText("Hospitalisation");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem11ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenu1.add(jMenuItem11);
 
-        jMenu1.add(jMenu3);
+        jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItem13.setText("Consommation");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem13);
 
-        jMenu5.setText("Consultation");
-        jMenu5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jMenuItem14.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem14.setText("Paiement");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem14);
 
-        jMenu6.setText("Ajouter une Consultation");
-        jMenu5.add(jMenu6);
+        jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem12.setText("Autils Administrateur");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem12);
 
-        jMenu7.setText("Liste de toutes les Consultations");
-        jMenu5.add(jMenu7);
-
-        jMenu1.add(jMenu5);
-
-        jMenu8.setText("Hospitalisation");
-        jMenu8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jMenu9.setText("Ajouter une Consommation");
-        jMenu8.add(jMenu9);
-
-        jMenu11.setText("Liste de Consommations");
-        jMenu8.add(jMenu11);
-
-        jMenu1.add(jMenu8);
-
-        jMenu10.setText("Autils Administrateur");
-        jMenu10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jMenu12.setText("Espace Admin");
-        jMenu10.add(jMenu12);
-
-        jMenu1.add(jMenu10);
+        jMenuItem3.setText("Me Deconnecter");
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
@@ -240,6 +241,11 @@ public class Accueil extends javax.swing.JFrame {
 
         jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jMenuItem2.setText("Facture");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -253,6 +259,11 @@ public class Accueil extends javax.swing.JFrame {
 
         jMenuItem5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jMenuItem5.setText("Liste de Médecins");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -385,21 +396,6 @@ public class Accueil extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
-
-    }//GEN-LAST:event_jMenu3ActionPerformed
-
-    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-       
-
-    }//GEN-LAST:event_jMenu4ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-         f = new Reception();
-        f.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
      try {String r = JOptionPane.showInputDialog("Entrez L'ID du Malade\n ");
      int n=Integer.parseInt(r);
@@ -488,6 +484,127 @@ public class Accueil extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        String n = JOptionPane.showInputDialog("Entre le numéro de l'interne ");
+        int i = Integer.parseInt(n);
+        try {
+            String url = "jdbc:mysql://localhost/gestionhospitaliere";
+            con = DriverManager.getConnection(url, "root", "");
+            System.out.println("Bien 1");
+//         JasperDesign jDesign =JRXmlLoader.load("C:\\Users\\Djumbi\\Desktop\\ASSISTANT\\Java\\DataBase\\src\\L.jrxml");
+            JasperDesign jDesign = JRXmlLoader.load("C:\\Users\\Djumbi\\Desktop\\ASSISTANT\\Java\\E_Report\\src\\e_report\\F.jrxml");
+            String query = "SELECT\n" +
+"     malade.`Noms` AS malade_Noms,\n" +
+"     malade.`Sexe` AS malade_Sexe,\n" +
+"     malade.`Telephone` AS malade_Telephone,\n" +
+"     malade.`PerRefContact` AS malade_PerRefContact,\n" +
+"     malade.`PersonneRef` AS malade_PersonneRef,\n" +
+"     interner.`Service` AS interner_Service,\n" +
+"     interner.`DEntree` AS interner_DEntree,\n" +
+"     interner.`DSortie` AS interner_DSortie,\n" +
+"     chambre.`Nom` AS chambre_Nom,\n" +
+"     chambre.`Prix` AS chambre_Prix,\n" +
+"     consommation.`Quantite` AS consommation_Quantite,\n" +
+"     medoc.`Nom_Medoc` AS medoc_Nom_Medoc,\n" +
+"     medoc.`Prix_Medoc` AS medoc_Prix_Medoc,\n" +
+"     interner.`Id` AS interner_Id,\n" +
+"DATEDIFF(DSortie,DEntree)as 'Nombre de jours',\n" +
+"Quantite*medoc.Prix_Medoc as 'Prix Total',chambre.prix*DATEDIFF(DSortie, DEntree)+1.5*DATEDIFF(DSortie, DEntree)+2*DATEDIFF(DSortie, DEntree) as TT\n" +
+"FROM\n" +
+"     `malade` malade INNER JOIN `interner` interner ON malade.`Id_Malade` = interner.`IdM`\n" +
+"     INNER JOIN `chambre` chambre ON interner.`IdChambre` = chambre.`Id`\n" +
+"     INNER JOIN `consommation` consommation ON malade.`Id_Malade` = consommation.`IdMalade`\n" +
+"     INNER JOIN `medoc` medoc ON consommation.`IdMedicament` = medoc.`Id_Medoc` where interner.Id="+n;
+
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jDesign.setQuery(updateQuery);
+            JasperReport jReport = JasperCompileManager.compileReport(jDesign);
+            System.out.println("Bien");
+            JasperPrint jPrint = JasperFillManager.fillReport(jReport, null, con);
+
+            JasperViewer.viewReport(jPrint);
+        } catch (Exception ex) {
+            Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    
+        try {
+            String url = "jdbc:mysql://localhost/gestionhospitaliere";
+            con = DriverManager.getConnection(url, "root", "");
+            System.out.println("Bien 1");
+//         JasperDesign jDesign =JRXmlLoader.load("C:\\Users\\Djumbi\\Desktop\\ASSISTANT\\Java\\DataBase\\src\\L.jrxml");
+            JasperDesign jDesign = JRXmlLoader.load("A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\src\\Reports\\ListeMed.jrxml");
+            String query = "SELECT\n" +
+"     medecin.`IdMed` AS medecin_IdMed,\n" +
+"     medecin.`Noms` AS medecin_Noms,\n" +
+"     medecin.`Sexe` AS medecin_Sexe,\n" +
+"     medecin.`Titre` AS medecin_Titre,\n" +
+"     medecin.`Specialite` AS medecin_Specialite,\n" +
+"     medecin.`Telephone` AS medecin_Telephone\n" +
+"FROM\n" +
+"     `medecin` medecin";
+
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jDesign.setQuery(updateQuery);
+            JasperReport jReport = JasperCompileManager.compileReport(jDesign);
+            System.out.println("Bien");
+            JasperPrint jPrint = JasperFillManager.fillReport(jReport, null, con);
+
+            JasperViewer.viewReport(jPrint);
+        } catch (Exception ex) {
+            Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+//        if (em.equals("Administrateur")){
+//            Admin f=new Admin();
+//            f.setVisible(true);
+//            this.setVisible(false);
+//            JOptionPane.showMessageDialog(this,"Vous n'avez pas droit d'acces "+em);
+//        }
+//        else
+//        JOptionPane.showMessageDialog(this,"Vous n'avez pas droit d'acces");
+            Admin f=new Admin();
+            f.setVisible(true);
+            this.setVisible(false);
+                    
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+         Reception f=new Reception();
+            f.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+            Consultation f=new Consultation();
+            f.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+            Hospitalisation f=new Hospitalisation();
+            f.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+            Consommation f=new Consommation();
+            f.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+            Paiement f=new Paiement();
+            f.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -531,20 +648,15 @@ public class Accueil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
-    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -552,6 +664,7 @@ public class Accueil extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

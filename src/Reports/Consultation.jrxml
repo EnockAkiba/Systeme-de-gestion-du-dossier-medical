@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e18cddd-9471-4aa7-a219-2dac42d8a809">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e18cddd-9471-4aa7-a219-2dac42d8a809">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="439"/>
+	<property name="ireport.y" value="220"/>
 	<queryString>
 		<![CDATA[SELECT
      consultation.`Taille` AS consultation_Taille,
@@ -285,163 +285,163 @@ FROM
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="148" splitType="Stretch">
+		<band height="163" splitType="Stretch">
 			<textField>
-				<reportElement mode="Opaque" x="41" y="33" width="74" height="20" backcolor="#CCCCFF" uuid="14210cde-44dd-43e2-a350-b3997034d7fd"/>
+				<reportElement mode="Opaque" x="41" y="45" width="74" height="20" backcolor="#CCCCFF" uuid="14210cde-44dd-43e2-a350-b3997034d7fd"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Poisd}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="6" y="4" width="319" height="20" backcolor="#8BC2CA" uuid="9f12716a-c62e-4d92-8f5b-0bdb575dd4c7"/>
+				<reportElement mode="Opaque" x="6" y="4" width="319" height="28" backcolor="#8BC2CA" uuid="9f12716a-c62e-4d92-8f5b-0bdb575dd4c7"/>
 				<textElement>
-					<font size="14" isBold="true"/>
+					<font size="18" isBold="true"/>
 				</textElement>
 				<text><![CDATA[consultation]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="6" y="33" width="35" height="20" backcolor="#CCCCFF" uuid="51755243-6efc-4058-a20a-9f69543d68ae"/>
+				<reportElement mode="Opaque" x="6" y="45" width="35" height="20" backcolor="#CCCCFF" uuid="51755243-6efc-4058-a20a-9f69543d68ae"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Poids]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="153" y="33" width="62" height="20" backcolor="#CCCCFF" uuid="fb80fd06-3203-4587-a06f-71c0f224fd01"/>
+				<reportElement mode="Opaque" x="153" y="45" width="62" height="20" backcolor="#CCCCFF" uuid="fb80fd06-3203-4587-a06f-71c0f224fd01"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Taille}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="115" y="33" width="38" height="20" backcolor="#CCCCFF" uuid="5b5e54b9-2801-461c-a055-3b7b7792ab56"/>
+				<reportElement mode="Opaque" x="115" y="45" width="38" height="20" backcolor="#CCCCFF" uuid="5b5e54b9-2801-461c-a055-3b7b7792ab56"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Taille]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="304" y="33" width="71" height="20" backcolor="#CCCCFF" uuid="126545cb-7740-4af5-b294-ca3f586a8683"/>
+				<reportElement mode="Opaque" x="304" y="45" width="71" height="20" backcolor="#CCCCFF" uuid="126545cb-7740-4af5-b294-ca3f586a8683"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_TA}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="216" y="33" width="88" height="20" backcolor="#CCCCFF" uuid="9a12217b-8fee-4341-8097-8a0bc13a8c61"/>
+				<reportElement mode="Opaque" x="216" y="45" width="88" height="20" backcolor="#CCCCFF" uuid="9a12217b-8fee-4341-8097-8a0bc13a8c61"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Tension Alterielle]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="443" y="32" width="110" height="20" backcolor="#CCCCFF" uuid="ba53aea1-faa5-499b-9632-98a351b81fe1"/>
+				<reportElement mode="Opaque" x="443" y="45" width="110" height="20" backcolor="#CCCCFF" uuid="ba53aea1-faa5-499b-9632-98a351b81fe1"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Temp}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="375" y="33" width="68" height="20" backcolor="#CCCCFF" uuid="7e7c29eb-954f-428f-be62-8739c5388e6a"/>
+				<reportElement mode="Opaque" x="375" y="45" width="68" height="20" backcolor="#CCCCFF" uuid="7e7c29eb-954f-428f-be62-8739c5388e6a"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Temperature]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="116" y="55" width="37" height="20" uuid="685b112c-ff5f-4a5c-aef0-649ccef893a7"/>
+				<reportElement x="116" y="67" width="37" height="20" uuid="685b112c-ff5f-4a5c-aef0-649ccef893a7"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Fresp}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="6" y="55" width="109" height="20" uuid="0bfe5396-c536-4b81-ad81-19c03faa64d1"/>
+				<reportElement x="6" y="67" width="109" height="20" uuid="0bfe5396-c536-4b81-ad81-19c03faa64d1"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Frequance Respiratoire]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="426" y="4" width="127" height="20" backcolor="#8BC2CA" uuid="8a108b42-10da-4a9a-9687-148bc80e600f"/>
+				<reportElement mode="Opaque" x="426" y="4" width="127" height="28" backcolor="#8BC2CA" uuid="8a108b42-10da-4a9a-9687-148bc80e600f"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Dconsultation}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="304" y="4" width="122" height="20" backcolor="#8BC2CA" uuid="e47532b4-8618-4c3f-ad43-7b8a6ec8f505"/>
+				<reportElement mode="Opaque" x="304" y="4" width="122" height="28" backcolor="#8BC2CA" uuid="e47532b4-8618-4c3f-ad43-7b8a6ec8f505"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Date de consultation]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="216" y="55" width="79" height="20" uuid="1845d662-7ebc-45b4-869b-0c234d72c076"/>
+				<reportElement x="216" y="67" width="79" height="20" uuid="1845d662-7ebc-45b4-869b-0c234d72c076"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Pouls}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="153" y="55" width="63" height="20" uuid="8be02ced-abf7-4ab3-9f41-4724a1d4cf7f"/>
+				<reportElement x="153" y="67" width="63" height="20" uuid="8be02ced-abf7-4ab3-9f41-4724a1d4cf7f"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Pouls]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="115" y="77" width="438" height="20" backcolor="#CCCCFF" uuid="33962cf0-01f5-4e7b-b6ce-5b324984c811"/>
+				<reportElement mode="Opaque" x="115" y="89" width="438" height="20" backcolor="#CCCCFF" uuid="33962cf0-01f5-4e7b-b6ce-5b324984c811"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Paraclinique}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="6" y="77" width="109" height="20" backcolor="#CCCCFF" uuid="f49bd7cd-34fd-41eb-9c4d-0fafdccef7c1"/>
+				<reportElement mode="Opaque" x="6" y="89" width="109" height="20" backcolor="#CCCCFF" uuid="f49bd7cd-34fd-41eb-9c4d-0fafdccef7c1"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Paraclinique]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="116" y="100" width="437" height="20" uuid="18b3d36e-d165-4cd2-a966-f6895fa4ad36"/>
+				<reportElement x="116" y="112" width="437" height="20" uuid="18b3d36e-d165-4cd2-a966-f6895fa4ad36"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Exaclinique}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="5" y="100" width="110" height="20" uuid="4c681724-e0f7-4cab-a246-703cd21faffe"/>
+				<reportElement x="5" y="112" width="110" height="20" uuid="4c681724-e0f7-4cab-a246-703cd21faffe"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Exaclinique]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="398" y="55" width="155" height="20" uuid="60ac6a48-9234-4401-ac3e-1bd15591e2a4"/>
+				<reportElement x="398" y="67" width="155" height="20" uuid="60ac6a48-9234-4401-ac3e-1bd15591e2a4"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{consultation_Diagnostique}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="298" y="55" width="100" height="20" uuid="2f3f79dd-7a05-481d-a4f8-c4f19bb20bba"/>
+				<reportElement x="298" y="67" width="100" height="20" uuid="2f3f79dd-7a05-481d-a4f8-c4f19bb20bba"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Diagnostique]]></text>
 			</staticText>
 			<textField>
-				<reportElement mode="Opaque" x="116" y="124" width="437" height="20" backcolor="#CCCCFF" uuid="dad4d659-3e0b-4121-96db-b3b05665d6f5"/>
+				<reportElement mode="Opaque" x="116" y="136" width="437" height="20" backcolor="#CCCCFF" uuid="dad4d659-3e0b-4121-96db-b3b05665d6f5"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{medecin_Noms}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="6" y="124" width="109" height="20" backcolor="#CCCCFF" uuid="bcfb310f-2176-4c33-9ba3-51f421c2f40f"/>
+				<reportElement mode="Opaque" x="6" y="136" width="109" height="20" backcolor="#CCCCFF" uuid="bcfb310f-2176-4c33-9ba3-51f421c2f40f"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
@@ -450,22 +450,23 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="36" splitType="Stretch"/>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="115" y="8" width="366" height="19" uuid="c107962b-4415-4dd8-885e-2feceb6863cb"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[By AKIBA WANJUMBI Enock, Tous droit réservés.]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="25" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch">
-			<staticText>
-				<reportElement x="129" y="8" width="366" height="19" uuid="c107962b-4415-4dd8-885e-2feceb6863cb"/>
-				<textElement>
-					<font fontName="Consolas" size="12"/>
-				</textElement>
-				<text><![CDATA[By AKIBA WANJUMBI Enock, Tous droit réservés.]]></text>
-			</staticText>
 			<line>
-				<reportElement x="5" y="4" width="547" height="1" uuid="10e3cdea-b035-4e40-be48-c3de99fbdeca"/>
+				<reportElement x="5" y="-57" width="547" height="1" uuid="10e3cdea-b035-4e40-be48-c3de99fbdeca"/>
 			</line>
 		</band>
 	</summary>

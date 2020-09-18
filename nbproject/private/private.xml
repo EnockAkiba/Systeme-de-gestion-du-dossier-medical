@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/Paiement.java</file>
-            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/Consultation.java</file>
-            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/Reception.java</file>
-            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/gestionhospitaliere/Accueil.java</file>
-            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/Login.java</file>
+            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/GUI/Login.java</file>
+            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/GUI/Consommation.java</file>
+            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/Reports/F.jrxml</file>
+            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/GUI/Paiement.java</file>
+            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/GUI/Reception.java</file>
+            <file>file:/A:/À_moi_jack/G3_défense/Projet/GestionHospitaliere/src/GUI/Accueil.java</file>
         </group>
     </open-files>
 </project-private>

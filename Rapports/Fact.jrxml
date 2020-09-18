@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7f378571-5825-497e-880d-b0f4a27f47fe">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     medecin.`IdMed` AS medecin_IdMed,
+     medecin.`Noms` AS medecin_Noms,
+     medecin.`Sexe` AS medecin_Sexe,
+     medecin.`Age` AS medecin_Age,
+     medecin.`Titre` AS medecin_Titre,
+     medecin.`Specialite` AS medecin_Specialite,
+     medecin.`Telephone` AS medecin_Telephone
+FROM
+     `medecin` medecin]]>
+	</queryString>
+	<field name="medecin_IdMed" class="java.lang.Integer"/>
+	<field name="medecin_Noms" class="java.lang.String"/>
+	<field name="medecin_Sexe" class="java.lang.String"/>
+	<field name="medecin_Age" class="java.lang.String"/>
+	<field name="medecin_Titre" class="java.lang.String"/>
+	<field name="medecin_Specialite" class="java.lang.String"/>
+	<field name="medecin_Telephone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

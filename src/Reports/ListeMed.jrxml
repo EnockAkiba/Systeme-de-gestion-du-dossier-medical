@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aeaca25d-c59c-484f-868e-02d264f5bd4f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     medecin.`IdMed` AS medecin_IdMed,
+     medecin.`Noms` AS medecin_Noms,
+     medecin.`Sexe` AS medecin_Sexe,
+     medecin.`Titre` AS medecin_Titre,
+     medecin.`Specialite` AS medecin_Specialite,
+     medecin.`Telephone` AS medecin_Telephone
+FROM
+     `medecin` medecin]]>
+	</queryString>
+	<field name="medecin_IdMed" class="java.lang.Integer"/>
+	<field name="medecin_Noms" class="java.lang.String"/>
+	<field name="medecin_Sexe" class="java.lang.String"/>
+	<field name="medecin_Titre" class="java.lang.String"/>
+	<field name="medecin_Specialite" class="java.lang.String"/>
+	<field name="medecin_Telephone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<line>
+				<reportElement x="390" y="36" width="103" height="1" forecolor="#3333FF" uuid="acf20b26-9f3b-4e0d-b650-ae7ee366581a"/>
+			</line>
+			<line>
+				<reportElement x="199" y="54" width="185" height="1" forecolor="#3333FF" uuid="6e78fd05-498d-425d-b7bc-8b83903b8d83"/>
+			</line>
+			<line>
+				<reportElement x="390" y="38" width="103" height="1" forecolor="#3333FF" uuid="a3f2aac3-77e9-4640-97cb-0f267c645090"/>
+			</line>
+			<line>
+				<reportElement x="68" y="37" width="131" height="1" forecolor="#3333FF" uuid="6822d38f-d7da-425e-8b23-77a251e0afe8"/>
+			</line>
+			<image hAlign="Right">
+				<reportElement x="496" y="0" width="55" height="75" uuid="d5ebe291-11ca-470c-97f5-87d26f5c61cc"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="68" height="58" uuid="1e32507e-6a60-4723-8ff5-345aab4c797d"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="68" y="0" width="425" height="34" forecolor="#FF3333" uuid="c718f4b3-111b-4179-bc7f-e9552482598a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRE HOSPITALIER BETHESDA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="68" y="35" width="130" height="1" forecolor="#3333FF" uuid="6bf4c0e7-bb52-4664-b997-d6e7fbc9a073"/>
+			</line>
+			<staticText>
+				<reportElement x="199" y="19" width="185" height="34" forecolor="#FF3333" uuid="d1b934e2-e73e-4fed-90b3-cc49376c0857"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CBCA NDOSHO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="199" y="56" width="185" height="1" forecolor="#3333FF" uuid="37aac92c-be7d-4a0f-97b9-bea75af9eb37"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="10" width="183" height="30" uuid="a655d8b5-d4c8-4e2d-b612-216e0c798953"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTE DES MEDECINS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="204" y="40" width="171" height="1" forecolor="#3333FF" uuid="8133f68d-08bc-46a7-9729-f0db5e660657"/>
+			</line>
+			<line>
+				<reportElement x="204" y="38" width="171" height="1" forecolor="#3333FF" uuid="ba452eb2-2ba9-4262-9825-596bbdf8c2ca"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="49" y="41" width="184" height="20" uuid="8587edee-f862-4a6c-a787-c2329065e2af"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="41" width="100" height="20" uuid="c6d65004-1e05-41bd-9cda-90b4e16c705a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEXE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="41" width="100" height="20" uuid="a8742bf8-5775-4b22-b704-4489013a6745"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SPECIALITE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="41" width="100" height="20" uuid="336b7f07-3f1f-482e-9e7c-1ad49772c927"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEPHONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="35" height="20" uuid="501721aa-7aa3-4893-bd2e-87c75b4f21e5"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="40" width="555" height="1" uuid="e9e2aaf6-682d-4893-94bc-03423fb014f9"/>
+			</line>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="bee7a9aa-42b7-4a51-9bf7-92da044c5cba"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="49" y="0" width="184" height="20" uuid="476953c8-4ebe-4b69-8a11-93513f77cb6f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medecin_Noms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="100" height="20" uuid="00f67a11-4792-4ebc-8d50-e3d9de89005e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medecin_Sexe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="0" width="100" height="20" uuid="ee53fc12-64c9-48e7-87a9-b68bdf89534f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medecin_Specialite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="20" uuid="aa156db7-e3e7-4a4c-937a-5db7ff6dfdf5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medecin_Telephone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="2" width="35" height="20" uuid="fcec1583-a89a-4c0f-bc2f-2116e74b5729"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medecin_IdMed}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="23" width="555" height="1" uuid="25d6d46b-3cc3-4c77-ad84-7ef1e0e1d8a3"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="554" y="-21" width="1" height="44" uuid="76bd2816-a65b-4533-8950-d51ec41175c8"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="446" y="-21" width="1" height="44" uuid="492a27fb-b0e3-45bc-bd92-774da77f620d"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="339" y="-21" width="1" height="44" uuid="fb572ca9-150a-4228-9051-0d4f4bfe48b2"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="234" y="-21" width="1" height="44" uuid="e08f23eb-f0f5-4731-a571-7fbdd4d83e02"/>
+			</line>
+			<line>
+				<reportElement x="45" y="-21" width="1" height="45" uuid="0127f3b7-919e-406d-aa7c-73f955f23c15"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-22" width="1" height="45" uuid="14854469-70f4-42ae-aae7-eb6fb92c23f5"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="10" width="366" height="19" uuid="2479c7ec-8019-438c-9335-80bc95ff0f0f"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[By AKIBA WANJUMBI Enock, Tous droit réservés.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="3" width="547" height="1" uuid="96c14363-8b43-4698-8180-3fb6705c2fad"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

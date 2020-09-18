@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e6090df-b208-4ab3-9a4f-3b4b25af3e55">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="25"/>
+	<queryString>
+		<![CDATA[SELECT
+     malade.`Noms` AS malade_Noms,
+     malade.`Sexe` AS malade_Sexe,
+     malade.`Telephone` AS malade_Telephone,
+     malade.`PerRefContact` AS malade_PerRefContact,
+     malade.`PersonneRef` AS malade_PersonneRef,
+     interner.`Service` AS interner_Service,
+     interner.`DEntree` AS interner_DEntree,
+     interner.`DSortie` AS interner_DSortie,
+     chambre.`Nom` AS chambre_Nom,
+     chambre.`Prix` AS chambre_Prix,
+     consommation.`Quantite` AS consommation_Quantite,
+     medoc.`Nom_Medoc` AS medoc_Nom_Medoc,
+     medoc.`Prix_Medoc` AS medoc_Prix_Medoc,
+     interner.`Id` AS interner_Id,
+DATEDIFF(DSortie,DEntree)as 'Nombre de jours',
+Quantite*medoc.Prix_Medoc as 'Prix Total',
+chambre.prix*DATEDIFF(DSortie, DEntree) as Hospitaisation, 1.5*DATEDIFF(DSortie, DEntree)as 'Soins infirmiers', 2*DATEDIFF(DSortie, DEntree) as 'Visites Médicales',chambre.prix*DATEDIFF(DSortie, DEntree)+1.5*DATEDIFF(DSortie, DEntree)+2*DATEDIFF(DSortie, DEntree) as TT,
+SUM(Quantite*medoc.Prix_Medoc) AS prix_total 
+from
+     medoc,`malade` malade INNER JOIN `interner` interner ON malade.`Id_Malade` = interner.`IdM`
+     INNER JOIN `chambre` chambre ON interner.`IdChambre` = chambre.`Id`,consommation
+     ]]>
+	</queryString>
+	<field name="malade_Noms" class="java.lang.String"/>
+	<field name="malade_Sexe" class="java.lang.String"/>
+	<field name="malade_Telephone" class="java.lang.String"/>
+	<field name="malade_PerRefContact" class="java.lang.String"/>
+	<field name="malade_PersonneRef" class="java.lang.String"/>
+	<field name="interner_Service" class="java.lang.String"/>
+	<field name="interner_DEntree" class="java.sql.Timestamp"/>
+	<field name="interner_DSortie" class="java.sql.Date"/>
+	<field name="chambre_Nom" class="java.lang.String"/>
+	<field name="chambre_Prix" class="java.lang.Double"/>
+	<field name="consommation_Quantite" class="java.lang.Integer"/>
+	<field name="medoc_Nom_Medoc" class="java.lang.String"/>
+	<field name="medoc_Prix_Medoc" class="java.lang.String"/>
+	<field name="interner_Id" class="java.lang.Integer"/>
+	<field name="Nombre de jours" class="java.lang.Long"/>
+	<field name="Prix Total" class="java.lang.Double"/>
+	<field name="Hospitaisation" class="java.lang.Double"/>
+	<field name="Soins infirmiers" class="java.math.BigDecimal"/>
+	<field name="Visites Médicales" class="java.lang.Long"/>
+	<field name="TT" class="java.lang.Double"/>
+	<field name="prix_total" class="java.lang.Double"/>
+	<variable name="Prix Total_1" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Prix Total}]]></variableExpression>
+	</variable>
+	<variable name="medoc_Nom_Medoc_1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{medoc_Nom_Medoc}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<line>
+				<reportElement x="203" y="59" width="185" height="1" forecolor="#3333FF" uuid="eb4e8cbd-51c1-413b-8467-094f7dbb2930"/>
+			</line>
+			<image>
+				<reportElement x="4" y="4" width="60" height="57" uuid="e86bb4a7-1352-42da-a597-f84e86b3dbb3"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="72" y="41" width="131" height="1" forecolor="#3333FF" uuid="dbe9f277-e5a2-4141-9e27-b23d276509d5"/>
+			</line>
+			<staticText>
+				<reportElement x="203" y="23" width="185" height="34" forecolor="#FF3333" uuid="8734c9d3-451b-48f8-9623-2cdb520b2c4b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CBCA NDOSHO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="4" width="425" height="34" forecolor="#FF3333" uuid="ba39bd93-8370-45ea-a23b-5a7a48c98f65"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRE HOSPITALIER BETHESDA]]></text>
+			</staticText>
+			<image hAlign="Right">
+				<reportElement x="500" y="4" width="55" height="75" uuid="47cf3723-f9c6-446c-a077-9d1e8586ae24"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="394" y="40" width="103" height="1" forecolor="#3333FF" uuid="16fba2d9-2efb-4fe1-84bf-1e794fd67a4c"/>
+			</line>
+			<line>
+				<reportElement x="72" y="39" width="130" height="1" forecolor="#3333FF" uuid="21aa14a0-ec28-41e3-bace-f47bc033fc8e"/>
+			</line>
+			<line>
+				<reportElement x="203" y="61" width="185" height="1" forecolor="#3333FF" uuid="1ed5feca-e05f-4dd2-8a14-d659b4e8b8b5"/>
+			</line>
+			<line>
+				<reportElement x="394" y="42" width="103" height="1" forecolor="#3333FF" uuid="e59daf6a-77d7-45e9-b75d-0e0256857b54"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="388" y="5" width="41" height="20" uuid="e3d93c87-100f-4a1c-b4e9-8cb26be9facd"/>
+				<textElement>
+					<font fontName="Serif" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interner_Id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="5" width="188" height="20" uuid="9f750fe8-4715-429a-aedc-b7afaa159a47"/>
+				<textElement>
+					<font fontName="Serif" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELEVE DE FACTURE N°]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="333" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="63" width="190" height="20" uuid="90947f17-69d9-49b0-80fe-2c1dc1848bce"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Personne de Reference]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="83" width="190" height="20" backcolor="#CCCCFF" uuid="2f5fe655-3c76-4313-bc51-793a555e0ed3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Contact domicil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="43" width="190" height="20" backcolor="#CCCCFF" uuid="fd8df251-4b99-4217-bbc4-ed78caa100ed"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[malade_Telephone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="23" width="190" height="20" uuid="487c3b8a-f1f5-4a82-bbce-f0ea21079111"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sexe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="3" width="190" height="20" backcolor="#CCCCFF" uuid="c51e5429-e91e-485d-9794-084f9ffce175"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Noms]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="23" width="297" height="20" uuid="f2404e15-3360-405c-9a22-45a47d5f252b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Sexe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="200" y="3" width="297" height="20" backcolor="#CCCCFF" uuid="db9ae184-e8ad-460a-ae81-996b3bcfe5d0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Noms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="200" y="43" width="297" height="20" backcolor="#CCCCFF" uuid="b0d56b4e-0408-4a40-bc27-f32ffdb2c5ec"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Telephone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="200" y="83" width="297" height="20" backcolor="#CCCCFF" uuid="2f3408ba-bd4e-4a77-95b4-8c10377e1c3c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_PerRefContact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="63" width="297" height="20" uuid="747369c0-6541-4401-b623-941e878c9afc"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_PersonneRef}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="110" width="487" height="1" uuid="b541ca75-7390-4fc8-9aaf-d05982eb3b6d"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="138" width="100" height="20" backcolor="#CCCCFF" uuid="665cac80-d529-41fb-9cad-653f8fb1a521"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date d'entrée]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="138" width="83" height="21" backcolor="#CCCCFF" uuid="fd0e6ca8-e89a-4560-8378-70c08530b745"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date de Sortie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="158" width="100" height="20" uuid="c7edf0dd-9556-4fb5-81ee-bc12bced307c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="158" width="116" height="20" uuid="c949b045-b710-489e-bf51-84d7a683a2c1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Chambre]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="110" y="138" width="90" height="20" backcolor="#CCCCFF" uuid="98833393-2c96-4de9-80c2-4e08eb6a28ff"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interner_DEntree}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="283" y="138" width="85" height="20" backcolor="#CCCCFF" uuid="9bf2a784-69a4-406c-b107-00a6623808a6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interner_DSortie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="158" width="90" height="20" uuid="3b2765a5-4d61-4a53-a2b0-18ecbcce0c6f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interner_Service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="158" width="87" height="20" uuid="10e201fa-9fdb-48bc-84db-b27e540830d6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chambre_Nom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="368" y="138" width="92" height="20" backcolor="#CCCCFF" uuid="eb9088a9-1eb4-4a26-b7dc-5f11afb63e90"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre de jours]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="460" y="138" width="40" height="20" backcolor="#CCCCFF" uuid="f7184036-e091-4bb8-ad8a-73236faa0a33"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre de jours}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="158" width="43" height="20" uuid="58292086-b4d9-4187-af35-e6d0fa721b83"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Prix]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="158" width="40" height="20" uuid="ca66ec94-a41a-4469-90d6-d281400ac62e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chambre_Prix}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="474" y="158" width="26" height="20" uuid="47f00578-a790-4c20-97fe-66db2e2a52c2"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ $ /j]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="111" width="135" height="20" uuid="95b5b5e2-db2e-4fac-a2e9-b8f9da38b18a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOSPITALISATION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="259" width="487" height="1" uuid="3bf14b07-b264-41cb-8c1d-ea25018fd5dc"/>
+			</line>
+			<staticText>
+				<reportElement x="12" y="294" width="115" height="20" uuid="af84b457-6a9c-4530-8a1a-ff87d832d13c"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Désigation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="294" width="84" height="20" uuid="283666a2-d396-4dd0-b5d2-764c1919dfed"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="294" width="100" height="20" uuid="2716ed57-6d60-4cc4-80fc-3b9b9ab3933d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prix Unitaire]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="294" width="100" height="20" uuid="7b01d7e5-0769-4fa4-bee2-3eb628321f04"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prix Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="200" y="179" width="297" height="20" backcolor="#CCCCFF" uuid="eb8ee69d-3bea-44a7-b960-d4e5463835dc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Hospitaisation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="200" y="198" width="297" height="20" uuid="2bdcbda8-cb0b-46d6-871b-3d0c708cc916"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Soins infirmiers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="200" y="218" width="297" height="20" backcolor="#CCCCFF" uuid="0f3b8b2e-6425-4086-8d24-91fc633d4964"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Visites Médicales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="238" width="297" height="20" uuid="86b71517-47b2-4776-b278-66349271265a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="179" width="189" height="20" backcolor="#CCCCFF" uuid="f7f224f9-2a3e-4f0d-afa5-ac069fbd025c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="11" y="199" width="189" height="20" backcolor="#CCCCFF" uuid="4835eb2b-190b-4510-ad6a-134e49f9805d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Soins Infirmiers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="218" width="189" height="20" backcolor="#CCCCFF" uuid="a613f7ab-ce17-4cb7-8209-c171d30d1a30"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Visites Médicales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="11" y="238" width="189" height="20" backcolor="#CCCCFF" uuid="8a8da038-b4a0-46dd-a036-95816e8e586d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="260" width="221" height="20" uuid="546459a4-003e-4926-855d-019b401961ae"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Médicaments et autres services]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="285" width="417" height="1" uuid="d0595e6a-8741-4104-9afd-d82eea837b9c"/>
+			</line>
+			<line>
+				<reportElement x="12" y="317" width="417" height="1" uuid="fdd48843-3780-423e-a806-d0cf31ff6fa8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="325" y="-7" width="104" height="20" uuid="9e26dc34-17c6-4dbe-b7a4-85cff752ecf5"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Prix Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="-9" width="84" height="20" uuid="7a0a925b-9e61-42a6-8cbb-e6e0163d9175"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{consommation_Quantite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="-9" width="104" height="20" uuid="9d5f6d53-f09f-45e9-94cc-f5b4142d370d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medoc_Nom_Medoc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="-8" width="100" height="20" uuid="6994dfdf-8838-42ed-85d4-90049cde33be"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medoc_Prix_Medoc}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="12" y="14" width="417" height="1" uuid="876172f9-64d0-4682-8cec-32f88e996a82"/>
+			</line>
+			<line>
+				<reportElement x="428" y="-48" width="1" height="62" uuid="8c396e23-39e7-4fbb-b272-3eddda19b052"/>
+			</line>
+			<line>
+				<reportElement x="324" y="-48" width="1" height="62" uuid="713c4c01-8f70-440d-a263-5c07ca76ef90"/>
+			</line>
+			<line>
+				<reportElement x="214" y="-48" width="1" height="62" uuid="3be5d0a1-d61b-47a6-b4ed-ef988aed6eb1"/>
+			</line>
+			<line>
+				<reportElement x="11" y="-48" width="1" height="63" uuid="5893c8af-c79c-46c3-8e15-7672b3d63a26"/>
+			</line>
+			<line>
+				<reportElement x="127" y="-49" width="1" height="63" uuid="7433b7e6-61c6-45be-83f7-928f1d33ff24"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="28" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="0" width="257" height="20" uuid="8e071e42-ac0c-43de-976e-b426c9b9e465"/>
+				<text><![CDATA[By AKIBA WANJUMBI Enock, Tous droit réservés.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="0" width="104" height="20" uuid="261492c8-18ac-4493-9089-30ff9b172e3b"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Prix Total}+$F{TT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="146" y="0" width="189" height="20" backcolor="#CCCCFF" uuid="983fa904-f7d7-4d54-ad6c-c94e57a1c7c9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total à payer]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

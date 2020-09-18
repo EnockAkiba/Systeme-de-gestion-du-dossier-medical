@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66fd4d68-1b5f-4b16-9de0-3045bb0e840c">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="29"/>
-	<queryString language="SQL">
+	<property name="ireport.y" value="0"/>
+	<queryString>
 		<![CDATA[SELECT
      malade.`Id_Malade` AS malade_Id_Malade,
      malade.`Noms` AS malade_Noms,
@@ -60,7 +60,7 @@ FROM
 				<reportElement x="370" y="51" width="103" height="1" forecolor="#3333FF" uuid="36080584-24a4-44f3-bfad-2c20f3ff2c75"/>
 			</line>
 			<image>
-				<reportElement x="-4" y="8" width="93" height="70" uuid="775bdb08-1328-47b3-bd53-5104f9328ce9"/>
+				<reportElement x="0" y="8" width="93" height="70" uuid="775bdb08-1328-47b3-bd53-5104f9328ce9"/>
 				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
 			</image>
 			<line>
