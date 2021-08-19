@@ -60,10 +60,7 @@ public class Reception extends javax.swing.JFrame {
                     } catch(InterruptedException ex){
                         Logger.getLogger(Calendar.class.getName()).log(Level.SEVERE, null,ex);
 
-                    }
-                    
-                    
-                    
+                    }    
                 }
             }
         };
