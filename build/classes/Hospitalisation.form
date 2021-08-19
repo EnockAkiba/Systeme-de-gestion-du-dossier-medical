@@ -66,6 +66,7 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -135,9 +136,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="401" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="507" max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" pref="303" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -455,19 +456,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jButton8" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jButton9" alignment="0" pref="186" max="32767" attributes="0"/>
-                      <Component id="jButton10" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton9" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton7" alignment="0" pref="186" max="32767" attributes="0"/>
+                      <Component id="jButton10" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton7" min="-2" pref="186" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="273" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -534,7 +531,7 @@
               <Font name="Lucida Bright" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Exit.png"/>
+              <Image iconType="3" name="/b_home.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Fermer"/>
             <Property name="borderPainted" type="boolean" value="false"/>

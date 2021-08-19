@@ -198,7 +198,7 @@ public class Laboratoire extends javax.swing.JFrame {
         });
 
         jButton20.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Exit.png"))); // NOI18N
+        jButton20.setIcon(new javax.swing.ImageIcon("A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\Autres\\b_home.png")); // NOI18N
         jButton20.setText("Fermer");
         jButton20.setBorderPainted(false);
         jButton20.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
@@ -365,7 +365,7 @@ public class Laboratoire extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(700, Short.MAX_VALUE))
         );
 
         pack();
