@@ -2,6 +2,8 @@
 //import com.mysql.jdbc.PreparedStatement;
 import java.sql.*;
 import java.sql.ResultSet;
+import static java.time.Instant.now;
+import static java.time.MonthDay.now;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -551,11 +553,25 @@ public class Reception extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
+        if (txtNom.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Noms est vide !!! Inserer le malade à supprimer");
+        }
+        else {
+             try {
+                  String url="jdbc:mysql://localhost/gestionhospitaliere";
+                  con=DriverManager.getConnection(url,"root","");
+                   st=con.createStatement();
+                   st.executeUpdate("DELETE FROM malade WHERE Id_Malade` ="+txtNom.getText());
+//                     st.executeUpdate("DELETE FROM malade WHERE Noms ="+ txtNom.getText());
+                   JOptionPane.showMessageDialog(this, "Malade supprimé avec succès");
+                   selectMalade();
+             }catch (Exception e){
+                 e.printStackTrace();
+             }
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
             java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd",Locale.getDefault());
             String date= sdf.format(DateNaissance.getDate());
         try {
@@ -586,6 +602,7 @@ public class Reception extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
+        
 
     }//GEN-LAST:event_jButton8ActionPerformed
 

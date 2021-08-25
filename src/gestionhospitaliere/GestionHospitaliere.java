@@ -16,6 +16,10 @@ public class GestionHospitaliere {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        Bienvenue F = new Bienvenue();
+//        F.setVisible(true);
+//        Login l = new Login();
+        
     }
     
 }

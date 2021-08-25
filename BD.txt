@@ -1,0 +1,111 @@
+Create table malade(
+IdM int auto_increment primary key,
+Noms varchar(50) not null,
+Sexe varchar(10),
+Dnaissance date,
+Telephone Varchar(15),
+EtatCivil  Varchar(20),
+NomConjoint  Varchar(50),
+Profession  Varchar(30),
+Adresse  Varchar(50),
+PersonRef  Varchar(50),
+ContactRef  Varchar(15)
+);
+
+
+create table consultation(
+IdC int auto_increment primary key,
+IdM int not null,
+Taille varchar(15) not null,
+TA varchar(15) not null,
+Poisd varchar(15) not null,
+Temp varchar(15) not null,
+Fresp varchar(15) not null,
+Pouls varchar(15) not null,
+SOxygene varchar(15) not null,
+Dconsultation  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP	,
+Paraclinique varchar(100),
+Exaclinique varchar(100),
+Diagnostique varchar(50) not null,
+constraint fkidL foreign key (IdM) references malade (IdM)
+);
+create table examen(
+IdE int auto_increment primary key,
+Nom varchar(30),
+Prix DOUBLE not null,
+Desciption varchar(50)
+);
+
+create table labo(
+IdL int auto_increment primary key,
+IdC int not null,
+Dlabo TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+IdE int not null,
+Resultat varchar(50),
+constraint fkidE foreign key (IdE) references examen(IdE),
+constraint fkIdC foreign key (IdC) references consultation(IdC)
+)
+create table perception(
+ IdP int auto_increment primary key, 
+IdM int not null, 
+Dpaiement TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+Montant double not null, 
+Motif varchar(20) ,
+constraint fkidM foreign key (IdM) references malade (IdM)
+)
+
+create table hospitalisation(
+IdH int auto_increment primary key,
+IdM int not null,
+Dentree  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+Lieu  varchar(30),
+Statut  varchar(20),
+constraint fkidM1 foreign key (IdM) references malade (IdM)
+   )
+create table medoc(
+IdMedoc int auto_increment primary key,
+Nom varchar(30),
+Prix double
+   )
+
+create table ficheSuivi(
+IdFSuivi int auto_increment primary key,
+IdH int not null,
+idMedoc int not null,
+Quantite int not null,
+Dheure datetime ,
+Observation  varchar(50)
+constraint fkidH foreign key (IdH) references hospitalisation(IdH)
+   )
+
+create table facturation(
+    IdF int auto_increment primary key,
+IdH int not null,
+ActMedicaux double ,
+Atransfusion double ,
+VisMedicacal double,
+Sinfirmier double ,
+AutreService double,
+constraint fkidH1 foreign key (IdH) references hospitalisation(IdH)
+   )
+
+
+create table pharmacie(
+IdPh int auto_increment primary key,
+IdH int not null,
+IdMedoc int not null,
+Quantite int not null,
+Date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+   )
+
+
+create table User(
+IsUser int auto_increment primary key,
+Noms varchar(50) not null,
+Sexe varchar(15) not null,
+Telephone varchar(15) not null,
+Grade varchar(15) not null,
+Ussername varchar(30) not null,
+Password varchar(30) not null,
+Type varchar(20) not null
+   )
