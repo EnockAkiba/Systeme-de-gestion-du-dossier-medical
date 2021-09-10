@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66fd4d68-1b5f-4b16-9de0-3045bb0e840c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="29"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     malade.`Id_Malade` AS malade_Id_Malade,
+     malade.`Noms` AS malade_Noms,
+     malade.`Sexe` AS malade_Sexe,
+     malade.`DateNaiss` AS malade_DateNaiss,
+     malade.`Telephone` AS malade_Telephone,
+     malade.`EtatCivil` AS malade_EtatCivil,
+     malade.`NomsConjoint` AS malade_NomsConjoint,
+     malade.`Profession` AS malade_Profession,
+     malade.`Adresse` AS malade_Adresse,
+     malade.`PersonneRef` AS malade_PersonneRef,
+     malade.`PerRefContact` AS malade_PerRefContact
+FROM
+     `malade` malade]]>
+	</queryString>
+	<field name="malade_Id_Malade" class="java.lang.Integer"/>
+	<field name="malade_Noms" class="java.lang.String"/>
+	<field name="malade_Sexe" class="java.lang.String"/>
+	<field name="malade_DateNaiss" class="java.sql.Date"/>
+	<field name="malade_Telephone" class="java.lang.String"/>
+	<field name="malade_EtatCivil" class="java.lang.String"/>
+	<field name="malade_NomsConjoint" class="java.lang.String"/>
+	<field name="malade_Profession" class="java.lang.String"/>
+	<field name="malade_Adresse" class="java.lang.String"/>
+	<field name="malade_PersonneRef" class="java.lang.String"/>
+	<field name="malade_PerRefContact" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<image hAlign="Right">
+				<reportElement x="473" y="6" width="78" height="72" uuid="61e6fd64-9170-4850-bd20-8418d014271a"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="68" y="14" width="425" height="34" forecolor="#FF3333" uuid="c8907887-4192-4b97-a90e-f3b2cbc9760e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRE HOSPITALIER BETHESDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="44" width="185" height="34" forecolor="#FF3333" uuid="3861ba6d-d387-4d0b-bcc3-39e86db16858"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CBCA NDOSHO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="370" y="49" width="103" height="1" forecolor="#3333FF" uuid="35199f3e-2ffe-4ebc-a2c5-4d5ed9223b66"/>
+			</line>
+			<line>
+				<reportElement x="370" y="51" width="103" height="1" forecolor="#3333FF" uuid="36080584-24a4-44f3-bfad-2c20f3ff2c75"/>
+			</line>
+			<image>
+				<reportElement x="-4" y="8" width="93" height="70" uuid="775bdb08-1328-47b3-bd53-5104f9328ce9"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="89" y="48" width="92" height="1" forecolor="#3333FF" uuid="e63e6e1f-7c9d-4725-ad30-e6562c9975a8"/>
+			</line>
+			<line>
+				<reportElement x="89" y="50" width="92" height="1" forecolor="#3333FF" uuid="468baa5a-464b-4754-b9fc-e526793cb138"/>
+			</line>
+			<line>
+				<reportElement x="184" y="74" width="185" height="1" forecolor="#3333FF" uuid="a27c15de-9312-4a38-b33b-5a38588d36c6"/>
+			</line>
+			<line>
+				<reportElement x="184" y="76" width="185" height="1" forecolor="#3333FF" uuid="fa8b2f5c-c582-46f2-92c7-1df54f2d7615"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="51" splitType="Stretch">
+			<line>
+				<reportElement x="182" y="36" width="202" height="1" forecolor="#000000" uuid="69dc7980-08d0-41eb-8100-9f3f353b95d4"/>
+			</line>
+			<staticText>
+				<reportElement x="178" y="7" width="206" height="25" forecolor="#000000" uuid="3e07848b-c114-4cf9-80f1-46521da98710"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHE D'ADMISSION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="182" y="34" width="202" height="1" forecolor="#3333FF" uuid="eafa4a10-e383-45b6-a39a-bd05035848f2"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="264" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="158" y="0" width="373" height="20" backcolor="#CCCCFF" uuid="a6d3170a-b621-43d1-9711-fc6edc0af513"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Id_Malade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="200" width="147" height="20" backcolor="#CCCCFF" uuid="2f492362-faa7-4753-ab12-a09b5fa15baa"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Contact Domicil]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="100" width="373" height="20" uuid="6cea5f2d-3089-4575-bcd5-13a259912ab1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Profession}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="80" width="147" height="20" backcolor="#CCCCFF" uuid="88eabfb2-72f4-4f52-87fe-12cf68a009af"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Adresse]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="140" width="373" height="20" uuid="11f49ce9-c12d-4e3a-88c8-ba024fd9246f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_EtatCivil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="0" width="147" height="20" backcolor="#CCCCFF" uuid="fce708d7-f098-438e-9be8-ea078bd81554"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Numero ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="40" width="147" height="20" backcolor="#CCCCFF" uuid="b6c5e407-e030-49cd-ba08-9b068d636b0f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Sexe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="20" width="147" height="20" backcolor="#FFFFFF" uuid="1212ac01-2bb5-495e-ad06-1c118ad35148"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Noms]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="60" width="390" height="20" backcolor="#FFFFFF" uuid="931a2847-41ea-4d11-8566-b554e9c162a5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Telephone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="100" width="147" height="20" uuid="c71e4ffb-bf5a-4844-8783-5954ec6c897c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Profession]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="120" width="373" height="20" backcolor="#CCCCFF" uuid="da1dacaf-6480-4ea1-84d6-85d8c5794b86"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_DateNaiss}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="180" width="147" height="20" backcolor="#FFFFFF" uuid="95be0b7a-540e-4933-90bd-8312b9e40678"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Personne de Reference]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="180" width="373" height="20" backcolor="#FFFFFF" uuid="2bb83755-bea2-41f0-b026-3654a13f6a97"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_PersonneRef}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="160" width="147" height="20" backcolor="#CCCCFF" uuid="f2a68fca-c6c8-4437-895b-398937bca3f0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Noms du Conjoint]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="200" width="373" height="20" backcolor="#CCCCFF" uuid="14b11041-a5e4-4ffe-bf70-c8db67df219d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_PerRefContact}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="120" width="147" height="20" backcolor="#CCCCFF" uuid="14b6d0ba-314a-484a-b7ef-86bc69849ff1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date de Naissance]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="40" width="373" height="20" backcolor="#CCCCFF" uuid="40c8395c-ba34-4b0f-884e-29e3fa9853f4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Sexe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="20" width="400" height="20" backcolor="#FFFFFF" uuid="80701e5b-017d-413d-8ddb-5ae2c7ad46bc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Noms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="80" width="373" height="20" backcolor="#CCCCFF" uuid="f0ad1056-20ae-4e77-a028-9bd787dcf7d2"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Adresse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="11" y="60" width="147" height="20" backcolor="#FFFFFF" uuid="24d2f125-6ed7-4297-bb89-995c3ead6df2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Telephone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="140" width="147" height="20" uuid="551449e9-ff7a-485e-b803-076c14821b89"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Etat Civil]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="158" y="160" width="373" height="20" backcolor="#CCCCFF" uuid="4828d4ed-f7d8-477b-a90f-a81791272252"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_NomsConjoint}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="119" y="234" width="366" height="19" uuid="457a4bf2-5d09-435f-bd3a-c27abd054097"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[By AKIBA WANJUMBI Enock, Tous droit réservés.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="230" width="547" height="1" uuid="be5127ea-8d27-43a9-ac83-4a99dcc2b212"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="53" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

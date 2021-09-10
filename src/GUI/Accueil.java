@@ -105,6 +105,7 @@ public class Accueil extends javax.swing.JFrame {
         jMenu13 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(241, 19, 19));
@@ -286,6 +287,15 @@ public class Accueil extends javax.swing.JFrame {
 
         jMenu2.add(jMenu13);
 
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuItem1.setText("Fiche d'admission");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -391,14 +401,41 @@ public class Accueil extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-     try {
+     try {String r = JOptionPane.showInputDialog("Entrez L'ID du Malade\n ");
+     int n=Integer.parseInt(r);
             String url = "jdbc:mysql://localhost/gestionhospitaliere";
             con = DriverManager.getConnection(url, "root", "");
             System.out.println("Bien 1");
 //         JasperDesign jDesign =JRXmlLoader.load("C:\\Users\\Djumbi\\Desktop\\ASSISTANT\\Java\\DataBase\\src\\L.jrxml");
-            JasperDesign jDesign = JRXmlLoader.load("A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\src\\Reports\\ListeMalade.jrxml");
+            JasperDesign jDesign = JRXmlLoader.load("A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\src\\Reports\\Consultation.jrxml");
             System.out.print("Bien");
-            String query = "SELECT `Id_Malade`, `Noms`, `Sexe`, `DateNaiss`, `Telephone`, `EtatCivil` FROM `malade`ORDER BY Noms Asc";
+            String query = "SELECT\n" +
+"     consultation.`Taille` AS consultation_Taille,\n" +
+"     consultation.`TA` AS consultation_TA,\n" +
+"     consultation.`Poisd` AS consultation_Poisd,\n" +
+"     consultation.`Temp` AS consultation_Temp,\n" +
+"     consultation.`Fresp` AS consultation_Fresp,\n" +
+"     consultation.`Pouls` AS consultation_Pouls,\n" +
+"     consultation.`SOxygene` AS consultation_SOxygene,\n" +
+"     consultation.`Dconsultation` AS consultation_Dconsultation,\n" +
+"     consultation.`Paraclinique` AS consultation_Paraclinique,\n" +
+"     consultation.`Exaclinique` AS consultation_Exaclinique,\n" +
+"     consultation.`Diagnostique` AS consultation_Diagnostique,\n" +
+"     malade.`Id_Malade` AS malade_Id_Malade,\n" +
+"     malade.`Noms` AS malade_Noms,\n" +
+"     malade.`Sexe` AS malade_Sexe,\n" +
+"     malade.`DateNaiss` AS malade_DateNaiss,\n" +
+"     malade.`Telephone` AS malade_Telephone,\n" +
+"     malade.`EtatCivil` AS malade_EtatCivil,\n" +
+"     malade.`NomsConjoint` AS malade_NomsConjoint,\n" +
+"     malade.`Profession` AS malade_Profession,\n" +
+"     malade.`Adresse` AS malade_Adresse,\n" +
+"     malade.`PersonneRef` AS malade_PersonneRef,\n" +
+"     malade.`PerRefContact` AS malade_PerRefContact,\n" +
+"     medecin.`Noms` AS medecin_Noms\n" +
+"FROM\n" +
+"     `malade` malade INNER JOIN `consultation` consultation ON malade.`Id_Malade` = consultation.`IdM`\n" +
+"     INNER JOIN `medecin` medecin ON consultation.`IdMed` = medecin.`IdMed` where Id_Malade="+n;
 
             JRDesignQuery updateQuery = new JRDesignQuery();
             updateQuery.setText(query);
@@ -412,6 +449,44 @@ public class Accueil extends javax.swing.JFrame {
             Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+         String n = JOptionPane.showInputDialog("Entre le numéro du Reçu ");
+        int i = Integer.parseInt(n);
+        try {
+            String url = "jdbc:mysql://localhost/gestionhospitaliere";
+            con = DriverManager.getConnection(url, "root", "");
+            System.out.println("Bien 1");
+//         JasperDesign jDesign =JRXmlLoader.load("C:\\Users\\Djumbi\\Desktop\\ASSISTANT\\Java\\DataBase\\src\\L.jrxml");
+            JasperDesign jDesign = JRXmlLoader.load("A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\src\\Reports\\FicheAdmission.jrxml");
+            String query = "SELECT\n" +
+"     malade.`Id_Malade` AS malade_Id_Malade,\n" +
+"     malade.`Noms` AS malade_Noms,\n" +
+"     malade.`Sexe` AS malade_Sexe,\n" +
+"     malade.`DateNaiss` AS malade_DateNaiss,\n" +
+"     malade.`Telephone` AS malade_Telephone,\n" +
+"     malade.`EtatCivil` AS malade_EtatCivil,\n" +
+"     malade.`NomsConjoint` AS malade_NomsConjoint,\n" +
+"     malade.`Profession` AS malade_Profession,\n" +
+"     malade.`Adresse` AS malade_Adresse,\n" +
+"     malade.`PersonneRef` AS malade_PersonneRef,\n" +
+"     malade.`PerRefContact` AS malade_PerRefContact\n" +
+"FROM\n" +
+"     `malade` malade where Id_Malade=" + n;
+
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jDesign.setQuery(updateQuery);
+            JasperReport jReport = JasperCompileManager.compileReport(jDesign);
+            System.out.println("Bien");
+            JasperPrint jPrint = JasperFillManager.fillReport(jReport, null, con);
+
+            JasperViewer.viewReport(jPrint);
+        } catch (Exception ex) {
+            Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -469,6 +544,7 @@ public class Accueil extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
