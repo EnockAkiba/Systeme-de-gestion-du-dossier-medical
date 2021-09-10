@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e18cddd-9471-4aa7-a219-2dac42d8a809">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     consultation.`IdM` AS consultation_IdM,
+     consultation.`IdMed` AS consultation_IdMed,
+     consultation.`Taille` AS consultation_Taille,
+     consultation.`TA` AS consultation_TA,
+     consultation.`Poisd` AS consultation_Poisd,
+     consultation.`Temp` AS consultation_Temp,
+     consultation.`Fresp` AS consultation_Fresp,
+     consultation.`Pouls` AS consultation_Pouls,
+     consultation.`SOxygene` AS consultation_SOxygene,
+     consultation.`Dconsultation` AS consultation_Dconsultation,
+     consultation.`Paraclinique` AS consultation_Paraclinique,
+     consultation.`Exaclinique` AS consultation_Exaclinique,
+     consultation.`Diagnostique` AS consultation_Diagnostique
+FROM
+     `consultation` consultation]]>
+	</queryString>
+	<field name="consultation_IdM" class="java.lang.Integer"/>
+	<field name="consultation_IdMed" class="java.lang.Integer"/>
+	<field name="consultation_Taille" class="java.lang.String"/>
+	<field name="consultation_TA" class="java.lang.String"/>
+	<field name="consultation_Poisd" class="java.lang.String"/>
+	<field name="consultation_Temp" class="java.lang.String"/>
+	<field name="consultation_Fresp" class="java.lang.String"/>
+	<field name="consultation_Pouls" class="java.lang.String"/>
+	<field name="consultation_SOxygene" class="java.lang.String"/>
+	<field name="consultation_Dconsultation" class="java.sql.Date"/>
+	<field name="consultation_Paraclinique" class="java.lang.String"/>
+	<field name="consultation_Exaclinique" class="java.lang.String"/>
+	<field name="consultation_Diagnostique" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

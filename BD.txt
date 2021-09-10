@@ -13,22 +13,6 @@ ContactRef  Varchar(15)
 );
 
 
-create table consultation(
-IdC int auto_increment primary key,
-IdM int not null,
-Taille varchar(15) not null,
-TA varchar(15) not null,
-Poisd varchar(15) not null,
-Temp varchar(15) not null,
-Fresp varchar(15) not null,
-Pouls varchar(15) not null,
-SOxygene varchar(15) not null,
-Dconsultation  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP	,
-Paraclinique varchar(100),
-Exaclinique varchar(100),
-Diagnostique varchar(50) not null,
-constraint fkidL foreign key (IdM) references malade (IdM)
-);
 create table examen(
 IdE int auto_increment primary key,
 Nom varchar(30),
@@ -109,3 +93,35 @@ Ussername varchar(30) not null,
 Password varchar(30) not null,
 Type varchar(20) not null
    )
+
+create table chambre ( 
+Id int auto_increment primary key, 
+Nom varchar(20) not null, 
+Description Varchar(30) , 
+Prix double )
+
+create table consommation(
+    Id int auto_increment primary key,
+    IdMedicament int not null,
+    IdMalade int not null,
+    Quantite int ,
+    DateConso datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    SoinMedical varchar(20) ,
+    Prix double,
+    Observation varchar(50),
+    constraint fkidmED foreign key (IdMedicament) references medoc(Id_Medoc),
+    constraint fIM foreign key (IdMalade) references malade(Id_Malade)
+    )
+create table interner(
+    Id int auto_increment primary key,
+    IdM int not null,
+    IdChambre int not null,
+    Diagno varchar(20) not null,
+    Service varchar(20) not null,
+    Statut varchar(20) not null,
+    DEntree TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    DSortie date null	,
+    constraint fkCham foreign key (IdChambre) references chambre (Id),
+    constraint fkMa3 foreign key (IdM) references malade (Id_Malade)
+    )
+  on delete cascade on update cascade

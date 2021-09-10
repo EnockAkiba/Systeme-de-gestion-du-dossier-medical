@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="90960792-cc46-4dc9-adb5-26d862cccdfb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     perception.`IdP` AS perception_IdP,
+     perception.`IdM` AS perception_IdM,
+     perception.`Dpaiement` AS perception_Dpaiement,
+     perception.`Montant` AS perception_Montant,
+     perception.`Motif` AS perception_Motif,
+     perception.`Mlettre` AS perception_Mlettre,
+     malade.`Id_Malade` AS malade_Id_Malade,
+     malade.`Noms` AS malade_Noms,
+     malade.`Sexe` AS malade_Sexe,
+     malade.`Telephone` AS malade_Telephone
+FROM
+     `malade` malade INNER JOIN `perception` perception ON malade.`Id_Malade` = perception.`IdM`]]>
+	</queryString>
+	<field name="perception_IdP" class="java.lang.Integer"/>
+	<field name="perception_IdM" class="java.lang.Integer"/>
+	<field name="perception_Dpaiement" class="java.sql.Date"/>
+	<field name="perception_Montant" class="java.lang.Double"/>
+	<field name="perception_Motif" class="java.lang.String"/>
+	<field name="perception_Mlettre" class="java.lang.String"/>
+	<field name="malade_Id_Malade" class="java.lang.Integer"/>
+	<field name="malade_Noms" class="java.lang.String"/>
+	<field name="malade_Sexe" class="java.lang.String"/>
+	<field name="malade_Telephone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<line>
+				<reportElement x="93" y="38" width="92" height="1" forecolor="#3333FF" uuid="8dcc9304-833d-483a-8ce2-a1d95574c1c8"/>
+			</line>
+			<line>
+				<reportElement x="374" y="39" width="103" height="1" forecolor="#3333FF" uuid="fcb15517-c090-4447-a219-e48c3faca356"/>
+			</line>
+			<image>
+				<reportElement x="0" y="-2" width="93" height="70" uuid="3d886659-bb94-4332-9899-4ed749e0e429"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="189" y="74" width="185" height="1" forecolor="#3333FF" uuid="1669b4e7-eb8d-40df-b035-d730940af2dc"/>
+			</line>
+			<line>
+				<reportElement x="189" y="78" width="185" height="1" forecolor="#3333FF" uuid="c3545acb-f3ab-4ebb-b9e1-80e8f10f8580"/>
+			</line>
+			<line>
+				<reportElement x="374" y="41" width="103" height="1" forecolor="#3333FF" uuid="a9cc2480-99bb-4365-bf8b-6d06f43f406a"/>
+			</line>
+			<line>
+				<reportElement x="93" y="40" width="92" height="1" forecolor="#3333FF" uuid="774b45aa-f095-4986-aac3-e48fd665545b"/>
+			</line>
+			<image hAlign="Right">
+				<reportElement x="477" y="-4" width="78" height="72" uuid="02edcbf0-988f-47b4-ac02-122c3c1d46c1"/>
+				<imageExpression><![CDATA["A:\\À_moi_jack\\G3_défense\\Projet\\GestionHospitaliere\\ICONS+\\hopital\\h.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="189" y="38" width="185" height="34" forecolor="#FF3333" uuid="f7c4feeb-e017-48e1-bac0-a8d76f200fca"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CBCA NDOSHO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="0" width="425" height="34" forecolor="#FF3333" uuid="8473cb95-bca9-4702-835c-21cd626594b9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRE HOSPITALIER BETHESDA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="185" y="4" width="168" height="20" uuid="eb533786-9523-4766-8a9b-eac8c63f6e31"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reçu de paiement  N° :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="4" width="100" height="20" uuid="4fd8f71f-a700-4687-8a1b-f2c5865cad22"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perception_IdP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="343" y="15" width="100" height="20" uuid="3a0a9615-2469-4e7b-8bee-f248b463cd9e"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Payé le]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="15" width="100" height="20" uuid="9d3f32fa-dfd0-4b54-a2a3-c4c9d16adeb2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perception_Dpaiement}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="206" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="99" y="0" width="276" height="20" backcolor="#CCCCFF" uuid="e37ed87b-8dc9-4ff2-9623-fd774f983eef"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{malade_Noms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="313" y="33" width="43" height="20" backcolor="#CCCCFF" uuid="bb616859-42e7-4d22-85a4-64f89c0afd2c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perception_Montant}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="99" width="293" height="21" backcolor="#CCCCFF" uuid="b8a5abe4-1a82-44b6-97a4-a94d3dd835b2"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Sceau et Signqture du percepteur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="100" height="20" backcolor="#CCCCFF" uuid="80efac1e-1769-4df8-ba60-d41b18b4697e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reçu de ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="293" y="33" width="20" height="20" backcolor="#CCCCFF" uuid="1e2a4899-7d1f-4d92-baa2-188ef702f3ce"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="33" width="100" height="20" backcolor="#CCCCFF" uuid="f26a7e57-c95a-40a1-8a0f-db474c8eca12"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[La Somme de ]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="99" y="33" width="194" height="20" backcolor="#CCCCFF" uuid="22af1e26-308d-4001-af2b-246232b3d75a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perception_Mlettre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="99" y="68" width="194" height="20" backcolor="#CCCCFF" uuid="661c2238-4597-4dce-8aa9-36499798b608"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perception_Motif}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="356" y="33" width="19" height="20" backcolor="#CCCCFF" uuid="eabdc2f8-2d57-40d6-9f92-0d33a9f90066"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[$ )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="68" width="100" height="20" backcolor="#CCCCFF" uuid="fa8566d6-c508-4e5a-96b1-df5f6787d5ab"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Frais de ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement mode="Opaque" x="379" y="131" width="173" height="24" backcolor="#CCCCFF" uuid="659130c1-6c93-4216-98fa-d37dbfc3f818"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="259" y="131" width="128" height="24" backcolor="#CCCCFF" uuid="0553d144-3012-4a86-b245-5c1244a5b9c6"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Fait à Goma le  :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="167" width="555" height="1" uuid="60f3585f-f9cb-4f2f-9298-5bbac77fc3a9"/>
+			</line>
+			<staticText>
+				<reportElement x="111" y="173" width="366" height="19" uuid="4060951d-5cfd-406c-9058-63fc8690dc96"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[By AKIBA WANJUMBI Enock, Tous droit réservés.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="76" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
